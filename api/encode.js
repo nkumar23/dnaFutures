@@ -1,4 +1,4 @@
-const { textToDna, dnaToAminoAcids, calculateGcContent, findRepeats, findHomopolymers, calculateGcVariation, checkTwistGuidelines } = require('../services/dnaService');
+const { textToDna, dnaToAminoAcids, calculateGcContent, findRepeats, findHomopolymers, calculateGcVariation, checkTwistGuidelines } = require('../server/services/dnaService');
 const { v4: uuidv4 } = require('uuid');
 
 module.exports = async (req, res) => {
