@@ -99,9 +99,6 @@ function dnaToAminoAcids(dna) {
   return aminoAcids.replace(/\*/g, '');
 }
 
-// Other functions like calculateGcContent, findRepeats, etc.
-// would be implemented here
-
 // Calculate GC content
 function calculateGcContent(dna) {
   if (!dna) return 0;
@@ -197,7 +194,6 @@ function checkTwistGuidelines(dna) {
   
   return issues;
 }
-
 
 module.exports = {
   textToBinary,

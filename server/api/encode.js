@@ -1,7 +1,7 @@
 const { textToDna, dnaToAminoAcids, calculateGcContent, findRepeats, findHomopolymers, calculateGcVariation, checkTwistGuidelines } = require('../services/dnaService');
 const { v4: uuidv4 } = require('uuid');
 
-module.exports = (req, res) => {
+module.exports = async (req, res) => {
   // Ensure this is a POST request
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });

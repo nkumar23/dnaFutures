@@ -1,49 +1,83 @@
 # DNA-Text-Protein Converter
 
-A web application that converts text to DNA sequences, translates to amino acids, and visualizes the resulting protein structure in 3D.
+A web application that converts text to DNA sequences, and then to amino acid sequences and 3D protein structures.
 
 ## Features
 
-- Text to DNA conversion using binary encoding
-- DNA to amino acid translation
-- Synthesis analysis (GC content, homopolymers, repeats)
-- 3D protein structure visualization using ESM Fold API and NGL Viewer
-- Download PDB files of generated structures
+- Convert text to DNA sequences using binary encoding
+- Translate DNA to amino acid sequences
+- Analyze DNA sequences for synthesis viability
+- Generate 3D protein structures from amino acid sequences
+- Interactive 3D protein viewer
 
-## Technologies
+## Tech Stack
 
-- **Frontend**: React, Bootstrap, NGL Viewer (molecular visualization)
-- **Backend**: Node.js, Express
-- **APIs**: ESM Atlas API for protein folding
-
-## Installation
-
-1. Install dependencies:
-   ```
-   npm run install-all
-   ```
-
-2. Start the development server:
-   ```
-   npm start
-   ```
-
-3. Open your browser and navigate to:
-   ```
-   http://localhost:3000
-   ```
-
-## How It Works
-
-1. Enter text in the "Convert Text" tab
-2. The text is converted to a DNA sequence using binary encoding
-3. The DNA sequence is translated to an amino acid sequence
-4. The amino acid sequence can be folded into a 3D protein structure using the ESM Atlas API
-5. The 3D structure is visualized using NGL Viewer, a powerful molecular visualization library
+- **Frontend**: React, Bootstrap
+- **Backend**: Node.js
+- **API Integration**: ESM Atlas Protein Folding API
+- **Deployment**: Vercel
 
 ## Deployment
 
-This application can be easily deployed to platforms like Vercel or Netlify.
+This application is deployed on Vercel. The deployment integrates the React frontend and Node.js API endpoints as serverless functions.
+
+### Deployment Architecture
+
+- Frontend: Static files served from `/client/build`
+- API Endpoints: Serverless functions in `/server/api`
+- Configuration: `vercel.json` manages routing and builds
+
+### How to Deploy
+
+1. Push your code to GitHub
+2. Connect your GitHub repository to Vercel
+3. Deploy with default settings (Vercel will use the configuration in `vercel.json`)
+
+### Local Development
+
+To run the application locally:
+
+1. Clone the repository
+2. Install dependencies:
+   ```
+   cd client && npm install
+   cd ../server && npm install
+   ```
+3. Start the client:
+   ```
+   cd client && npm start
+   ```
+4. Start the server:
+   ```
+   cd server && node index.js
+   ```
+
+## Project Structure
+
+```
+dna-futures/
+├── client/               # React frontend
+│   ├── public/
+│   ├── src/
+│   │   ├── components/   # React components
+│   │   ├── App.js        # Main application component
+│   │   └── index.js      # Entry point
+│   └── package.json      # Frontend dependencies
+├── server/               # Node.js backend
+│   ├── api/              # API endpoints (serverless functions)
+│   │   ├── encode.js     # Text-to-DNA conversion endpoint
+│   │   └── fold.js       # Protein folding endpoint
+│   ├── services/         # Business logic
+│   │   └── dnaService.js # DNA conversion utilities
+│   └── package.json      # Backend dependencies
+├── vercel.json           # Vercel deployment configuration
+└── README.md             # This file
+```
+
+## API Endpoints
+
+- `POST /api/encode` - Convert text to DNA and amino acid sequences
+- `POST /api/fold` - Generate 3D protein structure from amino acid sequence
 
 ## License
 
