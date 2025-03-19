@@ -1,0 +1,31 @@
+.tab-content {
+    padding: 20px;
+    border: 1px solid #dee2e6;
+    border-top: 0;
+    border-radius: 0 0 5px 5px;
+}
+
+pre {
+    white-space: pre-wrap;
+    word-break: break-all;
+}
+
+/* Styling for the Mol* viewer container */
+.msp-plugin {
+    position: relative !important;
+    z-index: 1;
+}
+
+/* Ensure tabs are clickable */
+.nav-tabs {
+    position: relative;
+    z-index: 10;
+}
+
+.nav-tabs .nav-link {
+    background-color: #f8f9fa;
+}
+
+.nav-tabs .nav-link.active {
+    background-color: #fff;
+}

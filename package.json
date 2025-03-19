@@ -1,0 +1,16 @@
+{
+  "name": "dna-text-protein-converter",
+  "version": "1.0.0",
+  "description": "Convert text to DNA, amino acids, and 3D protein structures",
+  "main": "index.js",
+  "scripts": {
+    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "cd server && npm start",
+    "client": "cd client && npm start",
+    "install-all": "npm install && cd server && npm install && cd ../client && npm install",
+    "build": "cd client && npm run build"
+  },
+  "dependencies": {
+    "concurrently": "^7.6.0"
+  }
+}
