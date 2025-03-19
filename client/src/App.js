@@ -19,7 +19,7 @@ function App() {
     setError(null);
     
     try {
-      const response = await fetch('http://localhost:3001/api/encode', {
+      const response = await fetch('/api/encode', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ text })
@@ -50,7 +50,7 @@ function App() {
     try {
       console.log(`Folding amino acid sequence: ${result.amino_acid_sequence}`);
       
-      const response = await fetch('http://localhost:3001/api/fold', {
+      const response = await fetch('/api/fold', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ 
